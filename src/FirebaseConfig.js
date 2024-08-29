@@ -14,11 +14,12 @@ import { getDatabase } from "firebase/database";
 const firebaseConfig = {
     apiKey: "AIzaSyBkZPxNKyofy9ckFbEYa1hY0_7ATB_Avmk",
     authDomain: "neo-material.firebaseapp.com",
+    databaseURL: "https://neo-material-default-rtdb.firebaseio.com",
     projectId: "neo-material",
     storageBucket: "neo-material.appspot.com",
     messagingSenderId: "682307159910",
-    appId: "1:682307159910:web:2b4742b74b438f16deaaa7",
-    measurementId: "G-WT8ZVBD7DR"
+    appId: "1:682307159910:web:d050c41199afbf92deaaa7",
+    measurementId: "G-114CH5P1F1"
   };
 
 
