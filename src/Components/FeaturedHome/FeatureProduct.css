@@ -1,0 +1,191 @@
+.FeatureProductWrapper{
+    display: flex;
+    padding: 6% 3%;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    background: #fff;
+}
+
+.FeatureProductWrapper .FeatureProductFirstDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.FeatureProductWrapper .FeatureProductFirstDiv h2{
+    text-transform: capitalize;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.FeatureProductWrapper .FeatureProductFirstDiv > .FeatureProductFirstDivPBtn{
+    display: flex;
+    gap: 50px;
+}
+
+.FeatureProductWrapper .FeatureProductFirstDiv > .FeatureProductFirstDivPBtn > a > p{
+    background: #333;
+    color: #fff;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.FeatureProductWrapper .FeatureProductFirstDiv > .FeatureProductFirstDivPBtn > a:hover > p{
+    opacity: 0.8;
+}
+
+.FeatureProductWrapper .FeatureProductFirstDiv > .FeatureProductFirstDivPBtn p{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #333;
+}
+
+/* for the product display */
+.FeatureProductWrapper .productDisplay{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.productDisplay .itemsDisplay{
+    padding: 10px;
+    width: 350px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden; 
+}
+
+.productDisplay .itemsDisplay .imgDisplayProduct{
+    /* background: #999; */
+    width: 100%;
+    border-radius: 8px;
+    height: 280px;
+    position: relative;
+    overflow: hidden; 
+    margin-bottom: 10px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+}
+
+.productDisplay .itemsDisplay .imgDisplayProduct img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style for the slick dots */
+    .slick-dots {
+        position: absolute;
+        top: 220px;
+        width: 10px;
+        height: 20px;
+        display: flex !important;
+        justify-content: center; /* Centers the dots horizontally */
+        gap: 5px; /* Adjust spacing between dots */
+        z-index: 10; /* Ensure dots appear above other elements */
+        backdrop-filter: blur(20px);
+    }
+    
+    .slick-dots li {
+        margin: 0;
+    }
+    
+    .slick-dots li button {
+        width: 5px; /* Adjust dot size */
+        height: 5px; /* Adjust dot size */
+        border-radius: 50%; /* Makes dots round */
+        background-color: #333; /* Dot color */
+    }
+    
+    .slick-dots li.slick-active button {
+        background-color: #ddd; /* Color of the active dot */
+    }
+
+
+.describeDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.describeDiv h5{
+    text-transform: capitalize;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.describeDiv > p{
+    font-size: 0.8;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.describeDiv > .priceAndCount{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0  5px;
+    margin-bottom: 20px;
+}
+
+.describeDiv > .priceAndCount > span{
+    font-size: 0.9rem;
+}
+
+.describeDiv> .priceAndCount > .hearthDivAndCount{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.describeDiv> .priceAndCount > .hearthDivAndCount p.btnCart{
+    background: #333;
+    color: #fff;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+}
+
+.describeDiv> .priceAndCount > .hearthDivAndCount p:hover:last-child{
+    opacity: 0.8;
+}
+
+
+/* Tablet (landscape and portrait) */
+@media only screen and (max-width: 1024px) {
+    .FeatureProductWrapper .productDisplay{
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+}
+
+/* Mobile (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    
+}
+
+/* Additional adjustments for smaller screens */
+@media only screen and (max-width: 480px) {
+    
+}

@@ -1,0 +1,70 @@
+.orderContainer{
+    width: 100%;
+    padding: 20px;
+}
+
+.orderContainer .order-table{
+    overflow-y: auto;
+    width: 100%;
+    background: #eee;
+    margin-top: 30px;
+    padding: 0 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.orderContainer .order-table thead{
+    border-bottom: 1px solid rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: row;align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.orderContainer .order-table thead tr{
+    display: flex;
+    flex-direction: row;align-items: center;
+    justify-content: space-between;
+    padding: 10px 5px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.orderContainer .order-table thead tr th{
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+
+.orderContainer .order-table > tr{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.orderContainer .order-table > tr td{
+    font-size: 0.8rem;
+    color: #333;
+}
+
+.orderContainer .order-table > tr td img{
+    background: #ddd;
+    height: 50px;
+    object-fit: cover;
+}
+
+.orderContainer .order-table > tr td select{
+    width: 100px;
+    font-size: 0.7rem;
+    color: #333;
+    border: none;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    text-transform: capitalize;
+}

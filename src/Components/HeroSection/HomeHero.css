@@ -1,0 +1,110 @@
+.homeHeroWrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 6%;
+    background: #ddd;
+    gap: 20px;
+}
+
+.homeHeroWrapper > img{
+    width: 50%;
+}
+
+.homeHeroWrapper .homeHeroFistDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.homeHeroWrapper .homeHeroFistDiv > span{
+    background: #333;
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 0.7rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.homeHeroWrapper .homeHeroFistDiv > h2{
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.homeHeroWrapper .homeHeroFistDiv > p{
+    font-size: 1rem;
+    color: #333;
+    font-weight: 400;
+}
+
+.homeHeroWrapper .homeHeroFistDiv > .homeHeroBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+    margin-bottom: 10px;
+}
+
+.homeHeroWrapper .homeHeroFistDiv > .homeHeroBtn a:first-child p{
+    background: #333;
+    color: #fff;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.homeHeroWrapper .homeHeroFistDiv > .homeHeroBtn a:hover:first-child p,
+.homeHeroWrapper .homeHeroFistDiv > .homeHeroBtn a:hover:last-child p{
+    opacity: 0.8;
+}
+
+.homeHeroWrapper .homeHeroFistDiv > .homeHeroBtn a:last-child p{
+    background: #fff;
+    color: #333;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 1rem;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+
+/* Tablet (landscape and portrait) */
+@media only screen and (max-width: 1024px) {
+    .homeHeroWrapper > img{
+        width: 100%;
+    }
+}
+
+/* Mobile (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    .homeHeroWrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .homeHeroWrapper > img{
+        width: 100%;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media only screen and (max-width: 480px) {
+    .homeHeroWrapper > img{
+        width: 100%;
+    }
+}

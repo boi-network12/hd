@@ -1,0 +1,17 @@
+/* Style for the floating chat icon button */
+.chat-icon {
+    position: fixed;
+    bottom: 100px; /* Distance from the bottom */
+    right: 20px; /* Distance from the left */
+    background-color: #333; /* Background color */
+    border-radius: 50%; /* Makes the button round */
+    padding: 15px; /* Button padding */
+    cursor: pointer; /* Cursor style on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for better visibility */
+    z-index: 1000; /* Keeps the button on top of other elements */
+  }
+  
+  .chat-icon:hover {
+    opacity: 0.8;
+  }
+  

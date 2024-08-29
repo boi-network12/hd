@@ -1,0 +1,241 @@
+.CartWrapper{
+    width: 100%;
+    background: #fff;
+    padding: 72px 30px 0;
+}
+
+.CartWrapper > h2{
+    color: #333;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+
+.CartWrapper > p{
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.CartWrapper > p span{
+    font-weight: 600;
+}
+
+  .CartGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+  }
+  
+  .CartOrderView, .CartSummary, .CartContactInfo {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.1);
+  }
+
+
+  
+  .CartItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .CartItem img{
+    width: 80px;
+    height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    object-fit: cover;
+  }
+
+  .CartItem .ItemDetails{
+    width: 300px;
+  }
+
+  .CartItem .ItemDetails p {
+    color: #333;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+
+  .CartItem .ItemDetails p:last-child{
+    font-size: 0.9rem;
+  }
+
+  .CartItem .btnRemove{
+    all: unset;
+    background: #333;
+    color: #fff;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  .CartItem .btnRemove:hover,
+  .CartSummary .summaryTotal button:hover,
+  .CartGrid .CartSummary form button:hover{
+    opacity: 0.8;
+  }
+  
+  .ItemDetails, .ItemPrice {
+    margin-left: 20px;
+  }
+  
+  .QuantityControl {
+    display: flex;
+    align-items: center;
+  }
+  
+  .QuantityControl button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .TotalPrice {
+    font-weight: bold;
+    color: #f90;
+    margin-top: 10px;
+  }
+  
+  .ShippingCalc, .CouponCode, .CartTotal {
+    margin-bottom: 20px;
+  }
+  
+  .ContactItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .CartGrid .CartSummary{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .CartGrid .CartSummary h3{
+    font-size: 1.1rem;
+    color: #333;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+  
+  .CartGrid .CartSummary form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .CartGrid .CartSummary form input,
+  .summaryTotal input{
+    height: 35px;
+    padding: 0 10px;
+    outline: none;
+    background: #ececec;
+    border-radius: 30px;
+    border: none;
+  }
+
+  .CartGrid .CartSummary form button{
+    all: unset;
+    background: #333;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  .CartSummary .summaryTotal{
+    background: #ddd;
+    margin-top: 30px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .CartSummary .summaryTotal h4{
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
+
+  .CartSummary .summaryTotal  p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .CartSummary .summaryTotal  p span{
+    font-size: 0.8rem;
+  }
+
+  .CartSummary .summaryTotal button{
+    all: unset;
+    background: #333;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+    margin-top: 20px;
+  }
+
+  .placeHolderItem{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+/* Tablet (landscape and portrait) */
+@media only screen and (max-width: 1024px) {
+    
+}
+
+/* Mobile (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    .CartWrapper{
+        padding: 73px 10px 0;
+    }
+
+    .CartGrid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .CartGrid .CartOrderView{
+        width: 100%;
+    }
+
+    .CartItem .ItemDetails{
+        width: 100%;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media only screen and (max-width: 480px) {
+    
+}

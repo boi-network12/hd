@@ -1,0 +1,157 @@
+.headerWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    padding: 2% 4%;
+    background: #fff;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    height: 70px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.headerWrapper .headerImgH1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    color: #333;
+}
+
+.headerWrapper .headerImgH1 img{
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+}
+
+.headerWrapper .headerImgH1 h1{
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    text-shadow: 02px 02px 3px rgba(0,0,0,0.1);
+}
+
+.headerWrapper .headerSecondDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 100%;
+}
+
+.headerWrapper .headerSecondDiv a {
+    position: relative;
+    cursor: pointer;
+    color: #333;
+}
+
+.headerWrapper .headerSecondDiv a span{
+    position: absolute;
+    top: -15px;
+    right: 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 0.6rem;
+}
+
+.headerWrapper .headerSecondDiv a .cart-icon{
+    font-size: 24px;
+    color: #333;
+}
+
+.headerWrapper .headerSecondDiv .headerSecondNav {
+    position: relative;
+}
+
+.headerWrapper .headerSecondDiv .headerSecondNav ul{
+    position: absolute;
+    list-style: none;
+    z-index: 99;
+    right: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    width: 145px;
+    border-radius: 10px;
+}
+
+.headerWrapper .headerSecondDiv .headerSecondNav ul li:nth-child(1){
+    border-bottom: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+}
+
+.headerWrapper .headerSecondDiv .headerSecondNav ul li{
+    padding: 5px 4px;
+    width: 100%;
+}
+
+.headerWrapper .headerSecondDiv .headerSecondNav ul li a{
+    padding: 5px 10px;
+    text-transform: capitalize;
+    color: #000;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.headerWrapper .headerSecondDiv .headerSecondNav ul li:hover a{
+    background-color: #ddd;
+}
+
+.headerWrapper .headerSecondDiv .headerSecondNav ul li:last-child{
+    border-top: 1px solid #ccc;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.headerWrapper .headerSecondDiv .headerSecondNav ul li:last-child h6{
+    font-weight: 400;
+}
+
+
+.headerWrapper .headerSecondDiv .headerSecondNav img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.headerWrapper .headerSecondDiv button{
+    all: unset;
+    background-color: #ddd;
+    color: #333;
+    text-transform: capitalize;
+    cursor: pointer;
+    padding: 7px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+
+/* Tablet (landscape and portrait) */
+@media only screen and (max-width: 1024px) {
+    
+}
+
+/* Mobile (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    
+}
+
+/* Additional adjustments for smaller screens */
+@media only screen and (max-width: 480px) {
+
+}

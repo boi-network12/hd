@@ -1,0 +1,158 @@
+
+
+.reviewWrapper{
+    width: 100%;
+    background: #fff;
+    padding: 7% 2%;
+}
+
+.reviewWrapper .HomeReviewFirstDivContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reviewWrapper .HomeReviewFirstDivContainer h2{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.reviewWrapper .HomeReviewFirstDivContainer > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+}
+
+.reviewWrapper .HomeReviewFirstDivContainer > div > p{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.reviewWrapper .HomeReviewFirstDivContainer > div > a > p{
+    background: #333;
+    color: #fff;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+
+.reviewWrapper .HomeReviewInfoContainer{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 30px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.reviewWrapper .HomeReviewInfoContainer .userInfoImg{
+    width: 350px;
+    height: 130px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+}
+
+.reviewWrapper .HomeReviewInfoContainer .userInfoImg img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.reviewWrapper .HomeReviewInfoContainer .userInfoImg .userInfo{
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.reviewWrapper .HomeReviewInfoContainer .userInfoImg .userInfo h3{
+    text-transform: capitalize;
+    color: #333;
+    font-size: 1rem;
+}
+
+.reviewWrapper .HomeReviewInfoContainer .userInfoImg .userInfo p{
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.reviewInput{
+    position: fixed;
+    bottom: 30px;
+    left: 8%;
+    right: 8%;
+    background: #ddd;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    padding: 5px;
+    z-index: 20;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.reviewInput textarea{
+    outline: none;
+    width: 85%;
+    padding: 5px 10px;
+    height: 50px;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+.reviewInput button{
+    background: #333;
+    color: #fff;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 2px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 1rem;
+    border: none;
+}
+
+/* Tablet (landscape and portrait) */
+@media only screen and (max-width: 1024px) {
+    .reviewWrapper .HomeReviewInfoContainer{
+        justify-content: flex-start;
+        padding: 0 30px;
+    }
+}
+
+/* Mobile (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    .reviewWrapper .HomeReviewInfoContainer .userInfoImg{
+        width: 400px;
+    }
+}
+
+/* Additional adjustments for smaller screens */
+@media only screen and (max-width: 480px) {
+    .reviewWrapper .HomeReviewInfoContainer .userInfoImg{
+        width: 400px;
+    }
+}

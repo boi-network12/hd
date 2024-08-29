@@ -1,0 +1,46 @@
+.footerWrapper{
+    background-color: #ddd;
+    padding: 8%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 40px;
+}
+
+.footerWrapper .footerUl{
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+}
+
+.footerWrapper .footerUl h3{
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.footerWrapper .footerUl a{
+    color: #333;
+    text-transform: capitalize;
+    margin-bottom: 2px;
+}
+
+
+/* Tablet (landscape and portrait) */
+@media only screen and (max-width: 1024px) {
+    
+}
+
+/* Mobile (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    
+}
+
+/* Additional adjustments for smaller screens */
+@media only screen and (max-width: 480px) {
+    
+}

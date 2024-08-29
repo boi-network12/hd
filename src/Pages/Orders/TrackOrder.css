@@ -1,0 +1,84 @@
+.TrackOrderWrapper{
+    width: 100%;
+    padding: 73px 20px 0;
+}
+
+.TrackOrderWrapper {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .TrackOrderWrapper h2 {
+    margin-bottom: 20px;
+  }
+  
+  .TrackOrderWrapper form {
+    margin-bottom: 20px;
+  }
+  
+  .TrackOrderWrapper input {
+    padding: 10px;
+    width: calc(100% - 22px);
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .TrackOrderWrapper button {
+    all: unset;
+    background: #333;
+    color: #fff;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+  }
+
+  .TrackOrderWrapper .orderDetails{
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    padding: 20px;
+
+  }
+
+  .TrackOrderWrapper .orderDetails img{
+    width: 300px;
+    margin-top: 20px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    background: #eee;
+    border-radius: 10px;
+  }
+
+  .TrackOrderWrapper .orderDetails h3{
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+  }
+
+  .TrackOrderWrapper .orderDetails p{
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .TrackOrderWrapper button:disabled {
+    background-color: #aaa;
+  }
+  
+  .TrackOrderWrapper .error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  .orderDetails ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .orderDetails li {
+    margin-bottom: 10px;
+  }
+  
