@@ -23,6 +23,7 @@ import CustomChat from './chat/CustomChat';
 // Import your chat icon from react-icons or any icon library
 import { FaComments, FaTimes } from 'react-icons/fa'; 
 import AdminCustomChat from './chat/adminChat/AdminCustomChat';
+import AboutPages from './Pages/AboutPage/AboutPages';
 
 function App() {
   const [isChatVisible, setIsChatVisible] = useState(false); // State to toggle chat visibility
@@ -73,6 +74,9 @@ function App() {
                   <Route path="/reviews" element={<ReviewsPage/>} />
                   <Route path="/cart" element={<Cart/>} />
                   <Route path="/products" element={<Products/>} />
+                  <Route path="/about" element={<AboutPages/>} />
+
+
                   <Route path="/dashboard" element={<PrivateRoute element={Dashboard}/>} />
                   <Route path="/orders" element={<PrivateRoute element={TrackOrder}/>} />
                   <Route path="/postorder" element={<PrivateRoute element={PostOrder}/>} />
