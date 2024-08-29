@@ -3,8 +3,8 @@ import { useAuth } from '../Context/AuthContext'
 import "./CustomChat.css"
 
 const CustomChat = () => {
-  const { currentUser, message, setMessage, handleSendMessage, messages} = useAuth()
- 
+  const { currentUser, message, setMessage, handleSendMessage, messages } = useAuth();
+
   return (
     <div className='custom-chat-container'>
       <div className='chat-messages'>
@@ -16,25 +16,24 @@ const CustomChat = () => {
             </div>
           ))
         ) : (
-          <p>no user</p>
+          <p>No user</p>
         )}
       </div>
       {currentUser && (
         <div className='chat-input'>
           <textarea 
-              cols="30" 
-              rows="10"
-              type="text" 
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder='Type a message...'
-          ></textarea>
-        <button onClick={handleSendMessage}>send</button>
-      </div>
+            cols="30" 
+            rows="10"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder='Type a message...'
+          />
+          <button onClick={handleSendMessage}>Send</button>
+        </div>
       )}
     </div>
-    // this is components for guest and currentUser.role === 'user'
-  )
-}
+  );
+};
+
 
 export default CustomChat

@@ -27,16 +27,22 @@
     border-radius: 5px;
 }
 
-.chat-bubble.user {
-    background-color: #007bff;
-    color: #fff;
+.chat-bubble-user {
+    background-color: #eee;
+    color: #333;
     align-self: flex-end;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px
 }
 
-.chat-bubble.guest {
-    background-color: #e9ecef;
-    color: #000;
+.chat-bubble-guest {
+    background-color: #ddd;
+    color: #333;
     align-self: flex-start;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px
 }
 
 .chat-input {

@@ -56,46 +56,85 @@ const AuthProvider = ({ children }) => {
         return unsubscribe;
     }, [logout]);
 
-    // fetch user message
-    useEffect(() => {
-        if (!currentUser) {
-            return
-        }
-
-        const messagesRef = ref(realTimeDb, `chat/userChat/${currentUser.uid}/messages`)
-
-        onValue(messagesRef, (snapshot) => {
-            const data = snapshot.val()
-            if (data) {
-                setMessages(Object.values(data))
-            } else {
-                setMessage([])
-            }
-        })
-    },[currentUser])
+   // Fetch user messages
+   useEffect(() => {
+    if (!currentUser) return;
+  
+    // Fetch messages sent by user
+    const messagesRef = ref(realTimeDb, `chat/userChat/${currentUser.uid}/messages`);
+    onValue(messagesRef, (snapshot) => {
+      const data = snapshot.val();
+      const fetchedMessages = data ? Object.values(data) : [];
+  
+      // Fetch messages sent by admin to the current user
+      if (currentUser.role !== 'admin') {
+        const adminMessagesRef = ref(realTimeDb, 'chat/adminChat/messages');
+        onValue(adminMessagesRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            const adminMessages = Object.values(data).filter(msg => msg.recipientId === currentUser.uid);
+            fetchedMessages.push(...adminMessages);
+          }
+  
+          // Sort messages by timestamp after fetching all messages
+          fetchedMessages.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+  
+          setMessages(fetchedMessages);
+        });
+      } else {
+        // Sort messages by timestamp for admin messages
+        fetchedMessages.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+        setMessages(fetchedMessages);
+      }
+    });
+  }, [currentUser]);
+  
+      
 
     // Fetch admin messages
     useEffect(() => {
-        if (currentUser?.role !== 'admin') return; // Ensure currentUser.role is correctly set to 'admin'
-    
-        const adminMessagesRef = ref(realTimeDb, 'chat/adminChat/messages');
-    
-        onValue(adminMessagesRef, (snapshot) => {
-            const data = snapshot.val();
-            if (data) {
-                const fetchedMessages = Object.entries(data).map(([id, message]) => ({
-                    id,
-                    ...message
+        if (currentUser?.role !== 'admin') return;
+      
+        const userChatsRef = ref(realTimeDb, 'chat/userChat');
+        const adminChatsRef = ref(realTimeDb, 'chat/adminChat/messages');
+      
+        onValue(userChatsRef, (snapshot) => {
+          const usersData = snapshot.val();
+          const allMessages = [];
+      
+          if (usersData) {
+            Object.keys(usersData).forEach((userId) => {
+              const userMessages = usersData[userId].messages;
+              if (userMessages) {
+                const messagesArray = Object.entries(userMessages).map(([id, message]) => ({
+                  id,
+                  ...message,
+                  sender: userId,
                 }));
-                setAdminMessages(fetchedMessages);
-                console.log(fetchedMessages);  // Debugging line
-            } else {
-                setAdminMessages([]);
-                console.log('No admin messages found'); // Debugging line
+                allMessages.push(...messagesArray);
+              }
+            });
+          }
+      
+          onValue(adminChatsRef, (adminSnapshot) => {
+            const adminData = adminSnapshot.val();
+            if (adminData) {
+              const adminMessagesArray = Object.entries(adminData).map(([id, message]) => ({
+                id,
+                ...message,
+              })).filter(msg => msg.sender === currentUser.uid || msg.recipientId === currentUser.uid);
+      
+              allMessages.push(...adminMessagesArray);
             }
+      
+            // Sort all messages by timestamp
+            allMessages.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+            
+            setAdminMessages(allMessages);
+          });
         });
-    }, [currentUser]);
-    
+      }, [currentUser]);
+      
     
 
     
@@ -131,24 +170,41 @@ const AuthProvider = ({ children }) => {
 
     const handleSendMessage = (recipientId = null) => {
         if (message.trim() === '') return;
-
+      
         const messagePath = currentUser?.role === 'admin' 
-        ? `chat/adminChat/messages/${recipientId}` // Admin replying to a user
-        : `chat/userChat/${currentUser.uid}/messages`;
-
-
+          ? `chat/adminChat/messages`  // Admin replying to a user
+          : `chat/userChat/${currentUser.uid}/messages`;
+      
         const newMessageRef = push(ref(realTimeDb, messagePath));
         set(newMessageRef, {
+          sender: currentUser.uid,
+          text: message,
+          timestamp: new Date().toISOString(), // Ensure timestamp is included
+          recipientId: currentUser?.role === 'admin' ? recipientId : null,
+          read: false,  // Add this line
+        });
+      
+        // Check if admin is sending the message, add the message to the user's chat as well
+        if (currentUser?.role === 'admin' && recipientId) {
+          const userChatRef = ref(realTimeDb, `chat/userChat/${recipientId}/messages`);
+          const newUserMessageRef = push(userChatRef);
+          set(newUserMessageRef, {
             sender: currentUser.uid,
             text: message,
-            timestamp: new Date().toISOString(),
-        });
-
+            timestamp: new Date().toISOString(), // Ensure timestamp is included
+            read: false,  // Add this line
+          });
+        }
+      
         setMessage('');
         if (messageRef.current) {
-            messageRef.current.scrollIntoView({ behavior: "smooth" });
+          messageRef.current.scrollIntoView({ behavior: "smooth" });
         }
-    };
+      };
+      
+      
+      
+    
 
     
     
